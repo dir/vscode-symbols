@@ -26,6 +26,23 @@ npm run generate-previews
 
 This script will update the preview markdown files with your new icons. Make sure to commit these changes along with your PR.
 
+## Keeping Your Fork Up To Date
+
+This fork includes a helper script to fast-forward from upstream:
+
+```bash
+npm run sync:upstream
+```
+
+Behavior:
+
+- Adds `upstream` remote if missing (`https://github.com/miguelsolorio/vscode-symbols.git`)
+- Fetches `upstream` (including tags)
+- Fast-forwards local `main` to `upstream/main`
+- Optional push to your fork with `PUSH_AFTER_SYNC=true npm run sync:upstream`
+
+The script stops if your working tree is not clean.
+
 ## Configuration
 
 You can configure which folders and files icons are displayed by using the following settings:
